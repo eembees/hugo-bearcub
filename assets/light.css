@@ -4,7 +4,7 @@
   --color-light: #fafafa;
   --color-primary: #1a8fe3;
   --size: 1rem;
-  --spacing: calc(var(--size) * 2.4);
+  --spacing: calc(var(--size) * 1.4);
 }
 body {
   background: var(--color-light);
