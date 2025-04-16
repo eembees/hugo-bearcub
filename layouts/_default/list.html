@@ -3,6 +3,10 @@
   {{ if .Data.Singular }}
     <h3 class="blog-filter">{{ i18n "filtering-for" }} "{{ .Title }}"</h3>
   {{ end }}
+  {{if .Content}}
+    {{ .Content }}
+    <h3 class="blog-header">Posts</h3>
+  {{ end }}
   <ul class="blog-posts">
     {{ range .Pages }}
     <li>
