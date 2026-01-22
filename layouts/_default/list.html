@@ -8,7 +8,8 @@
     <h3 class="blog-header">Posts</h3>
   {{ end }}
   <ul class="blog-posts">
-    {{ range .Pages }}
+    {{ $pages := where .Pages "Params.listed" "ne" false }}
+    {{ range $pages }}
     <li>
       <span>
         <i>
