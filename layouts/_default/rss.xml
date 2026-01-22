@@ -38,6 +38,8 @@
 {{- else }}
 {{- $pages = $pctx.Pages }}
 {{- end }}
+{{- /* EXCLUDE unlisted pages */ -}}
+{{- $pages = where $pages "Params.listed" "ne" false }}
 {{- $limit := .Site.Config.Services.RSS.Limit }}
 {{- if ge $limit 1 }}
 {{- $pages = $pages | first $limit }}
