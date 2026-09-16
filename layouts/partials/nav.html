@@ -1,5 +1,12 @@
+{{/* Left-hand menu items (everything except Thoughts) */}}
 {{ range .Site.Menus.main.ByWeight }}
-  <a href="{{ .URL }}">{{ .Name }}</a>
+  {{ if ne .Name "Thoughts" }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+{{ end }}
+
+{{/* Right-hand group: Thoughts + RSS pushed to the far right.
+     The `nav-right` class carries margin-left:auto (see light.css). */}}
+{{ range .Site.Menus.main.ByWeight }}
+  {{ if eq .Name "Thoughts" }}<a class="nav-right" href="{{ .URL }}">{{ .Name }}</a>{{ end }}
 {{ end }}
 <a href='{{ absURL "index.xml" }}'>RSS</a>
 
